@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Money</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <!-- เชื่อมโยงฟอนต์ Prompt จาก Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+          /* กำหนดให้ทั้งเว็บใช้ฟอนต์ Prompt */
+          body {
+              font-family: 'Prompt', sans-serif;
+          }
+      </style>
+</head>
+<body>
+<div class="container mt-5">
+    <center><h2>Hi</h2></center>
+    <h5>ส่วนที่ 2</h5>
+<div class="card">
+        <div class="card-header bg-success text-white">
+            การเบิกค่าใช้จ่าย/การเดินทาง
+        </div>
+  <div class="card-body">
+    <form class="row g-3">
+      <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1"><b>การเบิกค่าเดินทาง</b></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>เบิกต้นสังกัด</option>
+              <option>เบิกผู้จัด</option>
+              <option>ไม่เบิก</option>
+              <option>เบิกศูนย์แพทย์</option>
+            </select>
+          </div>
+      </div>
+        <div class="col-md-6">
+          <div class="form-group">
+              <label for="exampleFormControlSelect1">การเดินทาง</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>เครื่องบิน</option>
+                <option>รถประจำทาง</option>
+                <option>อื่นๆ</option>
+              </select>
+            </div>
+        </div>
+    <br>
+    <label for="inputEmail4" class="form-label">ออกเดินทางจากนครศรีธรรมราช</label>
+        <div class="col-md-6">
+          <label for="inputDate" class="form-label">วันที่</label>
+          <input type="date" class="form-control" id="inputDate" required>
+        </div>
+       <div class="col-md-6">
+         <label for="inputDate" class="form-label">เวลา</label>
+         <input type="time" class="form-control" id="inputTime" required>
+       </div>
+      <label for="inputEmail4" class="form-label">กลับถึงนครศรีธรรมราช</label>
+      <div class="col-md-6">
+         <label for="inputDate" class="form-label">วันที่</label>
+         <input type="date" class="form-control" id="inputDate">
+      </div>
+      <div class="col-md-6">
+        <label for="inputTime" class="form-label">เวลา</label>
+        <input type="time" class="form-control" id="inputTime" required>
+      </div>
+      <br>
+      <div class="col-6">
+      <label for="inputEmail4" class="form-label">มีความประสงค์เดินทางก่อนหรือกลับหลัง ในวันที่ </label>
+       <input type="date" class="form-control" id="inputTime" required>
+      </div>
+      <div class="col-12">
+        <p>เนื่องจาก</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            เวรหยุด
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            วันหยุดราชการ
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            ลาพักผ่อน
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            ลากิจ
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            อื่นๆ
+          </label>
+        </div>
+      </div>
+<!---การเบิกค่าเบี้ยเลี้ยง------>
+      <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">การเบิกค่าเบี้ยเลี้ยง</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>เบิกต้นสังกัด</option>
+              <option>เบิกผู้จัด</option>
+              <option>ไม่เบิก</option>
+              <option>เบิกศูนย์แพทย์</option>
+            </select>
+          </div>
+      </div>
+<!---การเบิกค่าเบี้ยเลี้ยง------>
+<!---การเบิกค่าลงทะเบียน------>
+      <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">การเบิกค่าเบี้ยเลี้ยง</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>เบิกต้นสังกัด</option>
+              <option>เบิกผู้จัด</option>
+              <option>ไม่เบิก</option>
+              <option>เบิกศูนย์แพทย์</option>
+            </select>
+          </div>
+      </div>
+<!---การเบิกค่าลงทะเบียน------>
+
+
+
+  </form>
+
+  <br>
+<!--- btn nextpage -->
+  <button class="btn btn-primary" onclick="nextPage()">ส่ง</button>
+  <script>
+      function nextPage() {
+          window.location.href = "nextpage.html"; // เปลี่ยนไปยังหน้าใหม่
+      }
+  </script> <!--- btn nextpage -->
+</div> <!--- card-body -->
+</div> <!--- card -->
+</div> <!--- container -->
+</body>
+</html>
