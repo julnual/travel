@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Money</title>
+  <title>Form User</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap JS -->
@@ -11,153 +11,317 @@
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <!-- เชื่อมโยงฟอนต์ Prompt จาก Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-          /* กำหนดให้ทั้งเว็บใช้ฟอนต์ Prompt */
-          body {
-              font-family: 'Prompt', sans-serif;
-          }
-      </style>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- เชื่อมโยง CSS แยก -->
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container mt-5">
     <center><h2>Hi</h2></center>
     <h5>ส่วนที่ 2</h5>
-<div class="card">
-        <div class="card-header bg-success text-white">
-            การเบิกค่าใช้จ่าย/การเดินทาง
-        </div>
+  <div class="card shadow">
+  <div class="card-header text-white">
+      การเบิกค่าใช้จ่าย/การเดินทาง
+  </div>
   <div class="card-body">
     <form class="row g-3">
       <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1"><b>การเบิกค่าเดินทาง</b></label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>เบิกต้นสังกัด</option>
-              <option>เบิกผู้จัด</option>
-              <option>ไม่เบิก</option>
-              <option>เบิกศูนย์แพทย์</option>
-            </select>
-          </div>
+        <label class="form-label">การเบิกค่าเดินทาง</label>
+        <select class="form-select">
+          <option>ระบุ</option>
+          <option>เบิกต้นสังกัด</option>
+          <option>เบิกผู้จัด</option>
+          <option>ไม่เบิก</option>
+          <option>เบิกศูนย์แพทย์</option>
+        </select>
       </div>
-        <div class="col-md-6">
-          <div class="form-group">
-              <label for="exampleFormControlSelect1">การเดินทาง</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>เครื่องบิน</option>
-                <option>รถประจำทาง</option>
-                <option>อื่นๆ</option>
-              </select>
-            </div>
-        </div>
-    <br>
-    <label for="inputEmail4" class="form-label">ออกเดินทางจากนครศรีธรรมราช</label>
-        <div class="col-md-6">
-          <label for="inputDate" class="form-label">วันที่</label>
-          <input type="date" class="form-control" id="inputDate" required>
-        </div>
-       <div class="col-md-6">
-         <label for="inputDate" class="form-label">เวลา</label>
-         <input type="time" class="form-control" id="inputTime" required>
-       </div>
-      <label for="inputEmail4" class="form-label">กลับถึงนครศรีธรรมราช</label>
+<!-- วิธีการเดินทาง -->
       <div class="col-md-6">
-         <label for="inputDate" class="form-label">วันที่</label>
-         <input type="date" class="form-control" id="inputDate">
+        <label class="form-label">การเดินทาง</label>
+        <select class="form-select" id="travelMethod" onchange="showOtherReason()">
+          <option>ระบุ</option>
+          <option>เครื่องบิน</option>
+          <option>รถประจำทาง</option>
+          <option>อื่นๆ</option>
+        </select>
+      </div>
+      <div class="col-md-6 mt-3" id="otherReasonContainer" style="display: none;">
+        <label class="form-label">ระบุเหตุผล</label>
+        <input type="text" class="form-control" id="otherReason" placeholder="กรุณาระบุวิธีการเดินทางอื่นๆ">
+      </div>
+      <script>
+        function showOtherReason() {
+          var travelMethod = document.getElementById("travelMethod").value;
+          var container = document.getElementById("otherReasonContainer");
+          if (travelMethod === "อื่นๆ") {
+            container.style.display = "block";
+          } else {
+            container.style.display = "none";
+          }
+        }
+      </script>
+<!-- วิธีการเดินทาง -->
+
+<!-- วันออกเดินทาง -->
+      <div class="col-12 mt-3">
+        <h6>ออกเดินทางจากนครศรีธรรมราช</h6>
       </div>
       <div class="col-md-6">
-        <label for="inputTime" class="form-label">เวลา</label>
-        <input type="time" class="form-control" id="inputTime" required>
+        <label class="form-label">วันที่</label>
+        <input type="text" id="thaiDate" class="form-control" placeholder="เลือกวันที่" required>
       </div>
-      <br>
-      <div class="col-6">
-      <label for="inputEmail4" class="form-label">มีความประสงค์เดินทางก่อนหรือกลับหลัง ในวันที่ </label>
-       <input type="date" class="form-control" id="inputTime" required>
-      </div>
-      <div class="col-12">
-        <p>เนื่องจาก</p>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            เวรหยุด
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            วันหยุดราชการ
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            ลาพักผ่อน
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            ลากิจ
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            อื่นๆ
-          </label>
-        </div>
-      </div>
-<!---การเบิกค่าเบี้ยเลี้ยง------>
       <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">การเบิกค่าเบี้ยเลี้ยง</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>เบิกต้นสังกัด</option>
-              <option>เบิกผู้จัด</option>
-              <option>ไม่เบิก</option>
-              <option>เบิกศูนย์แพทย์</option>
-            </select>
-          </div>
+        <label class="form-label">เวลา</label>
+        <input type="text" id="timePicker" class="form-control" placeholder="เลือกเวลา" required>
       </div>
-<!---การเบิกค่าเบี้ยเลี้ยง------>
-<!---การเบิกค่าลงทะเบียน------>
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+      <script>
+        // Date picker พ.ศ.
+        flatpickr("#thaiDate", {
+          dateFormat: "d-m-Y",
+          locale: "th",
+          onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length > 0) {
+              const d = selectedDates[0];
+              const day = String(d.getDate()).padStart(2, '0');
+              const month = String(d.getMonth() + 1).padStart(2, '0');
+              const year = d.getFullYear() + 543;
+              instance.input.value = `${day}-${month}-${year}`;
+            }
+          },
+          onOpen: function(selectedDates, dateStr, instance) {
+            if (instance.input.value) {
+              const parts = instance.input.value.split("-");
+              if (parts.length === 3) {
+                const day = parts[0];
+                const month = parts[1];
+                const year = parseInt(parts[2]) - 543;
+                instance.setDate(`${year}-${month}-${day}`, true);
+              }
+            }
+          }
+        });
+        // Time picker แบบ 24 ชั่วโมง
+        flatpickr("#timePicker", {
+          enableTime: true,
+          noCalendar: true,
+          dateFormat: "H:i",  // H:i คือ ชั่วโมง:นาที (24 ชั่วโมง)
+          time_24hr: true
+        });
+      </script>
+<!-- วันออกเดินทาง -->
+
+      <div class="col-12 mt-3">
+        <h6>กลับถึงนครศรีธรรมราช</h6>
+      </div>
       <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">การเบิกค่าเบี้ยเลี้ยง</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>เบิกต้นสังกัด</option>
-              <option>เบิกผู้จัด</option>
-              <option>ไม่เบิก</option>
-              <option>เบิกศูนย์แพทย์</option>
-            </select>
-          </div>
+        <label class="form-label">วันที่</label>
+        <input type="date" class="form-control" required>
       </div>
-<!---การเบิกค่าลงทะเบียน------>
+      <div class="col-md-6">
+        <label class="form-label">เวลา</label>
+        <input type="time" class="form-control" required>
+      </div>
 
+      <div class="col-12 mt-3">
+        <label class="form-label">มีความประสงค์เดินทางก่อนหรือกลับหลัง ในวันที่</label>
+        <input type="date" class="form-control" required>
+      </div>
 
+  <div class="col-12 mt-3">
+  <p>เนื่องจาก</p>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="reason" id="reason1" value="เวรหยุด" onclick="toggleOtherReason(false)">
+    <label class="form-check-label" for="reason1">เวรหยุด</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="reason" id="reason2" value="วันหยุดราชการ" onclick="toggleOtherReason(false)">
+    <label class="form-check-label" for="reason2">วันหยุดราชการ</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="reason" id="reason3" value="ลาพักผ่อน" onclick="toggleOtherReason(false)">
+    <label class="form-check-label" for="reason3">ลาพักผ่อน</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="reason" id="reason4" value="ลากิจ" onclick="toggleOtherReason(false)">
+    <label class="form-check-label" for="reason4">ลากิจ</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="reason" id="reason5" value="อื่นๆ" onclick="toggleOtherReason(true)">
+    <label class="form-check-label" for="reason5">อื่นๆ</label>
+  </div>
+  <div class="mt-2" id="otherReasonBox" style="display: none;">
+    <label for="otherReason" class="form-label">กรุณาระบุเหตุผล</label>
+    <input type="text" class="form-control" id="otherReason" placeholder="ระบุเหตุผล...">
+  </div>
+</div>
 
-  </form>
+<script>
+function toggleOtherReason(show) {
+  const box = document.getElementById('otherReasonBox');
+  box.style.display = show ? 'block' : 'none';
+}
+</script>
+<!---การเบิกค่าเบี้ยเลี้ยง--------------->
+      <div class="col-md-6 mt-3">
+        <label class="form-label">การเบิกค่าเบี้ยเลี้ยง</label>
+        <select class="form-select">
+          <option>ระบุ</option>
+          <option>เบิกต้นสังกัด</option>
+          <option>เบิกผู้จัด</option>
+          <option>ไม่เบิก</option>
+          <option>เบิกศูนย์แพทย์</option>
+        </select>
+      </div>
+<!---การเบิกค่าลงทะเบียน--------------->
+      <div class="col-md-6 mt-3">
+      <label class="form-label">การเบิกค่าลงทะเบียน</label>
+      <select class="form-select" id="paymentSelect" onchange="showMessage()">
+        <option>ระบุ</option>
+        <option>เบิกต้นสังกัด</option>
+        <option>เบิกผู้จัด</option>
+        <option>ไม่เบิก/ไม่มี</option>
+        <option>เบิกศูนย์แพทย์</option>
+      </select>
+      <div id="message" class="mt-2 text-danger" style="display: none;">
+        ตามจ่ายจริงไม่เกิน 1500 บาท/วัน ประชุม
+      </div>
+      </div>
 
-  <br>
-<!--- btn nextpage -->
-  <button class="btn btn-primary" onclick="nextPage()">ส่ง</button>
-  <script>
-      function nextPage() {
-          window.location.href = "nextpage.html"; // เปลี่ยนไปยังหน้าใหม่
+      <script>
+      function showMessage() {
+      const selectElement = document.getElementById('paymentSelect');
+      const messageElement = document.getElementById('message');
+      if (selectElement.value === 'เบิกต้นสังกัด') {
+        messageElement.style.display = 'block';
+      } else {
+        messageElement.style.display = 'none';
       }
-  </script> <!--- btn nextpage -->
-</div> <!--- card-body -->
-</div> <!--- card -->
-</div> <!--- container -->
+      }
+      </script>
+<!---การเบิกค่าที่พัก--------------->
+      <div class="col-md-6 mt-3">
+        <label class="form-label">การเบิกค่าที่พัก</label>
+        <div class="form-text text-danger">
+            พักเดี่ยว ไม่เกิน 1,450 บาท/คืน และพักคู่ ไม่เกิน 1,800 บาท/คืน
+        </div>
+        <select class="form-select mt-2">
+            <option>ระบุ</option>
+            <option>เบิกตามจ่ายจริง</option>
+            <option>เบิกเหมาจ่าย</option>
+            <option>เบิกผู้จัด</option>
+            <option>ไม่เบิก</option>
+            <option>เบิกศูนย์แพทย์</option>
+        </select>
+        </div>
+
+<!---ผู้ร่วมเดินทาง--------------->
+    <div class="col-12 mt-3">
+      <p>ผู้ร่วมเดินทาง</p>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="people" id="people1" value="พักเดี่ยว" onclick="togglePartnerInput()">
+        <label class="form-check-label" for="people1">พักเดี่ยว</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="people" id="people2" value="พักคู่" onclick="togglePartnerInput()">
+        <label class="form-check-label" for="people2">พักคู่</label>
+      </div>
+
+      <div id="partnerNameDiv" class="mt-3" style="display: none;">
+        <label class="form-label">ชื่อผู้ร่วมเดินทาง</label>
+        <input type="text" class="form-control" placeholder="กรอกชื่อผู้ร่วมเดินทาง">
+      </div>
+    </div>
+
+
+  <script>
+    function togglePartnerInput() {
+      const isCouple = document.getElementById('people2').checked;
+      const partnerDiv = document.getElementById('partnerNameDiv');
+      partnerDiv.style.display = isCouple ? 'block' : 'none';
+    }
+  </script>
+
+<!---วันที่เข้าพัก--------------->
+<div class="col-12 mt-3">
+  <h6>วันที่เข้าพัก</h6>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <label class="form-label">วันที่</label>
+    <input type="date" class="form-control" id="checkInDate" onchange="calculateDays()" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">เวลา</label>
+    <input type="time" class="form-control">
+  </div>
+</div>
+<div class="col-12 mt-3">
+  <h6>วันที่ออกจากที่พัก</h6>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <label class="form-label">วันที่</label>
+    <input type="date" class="form-control" id="checkOutDate" onchange="calculateDays()" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">เวลา</label>
+    <input type="time" class="form-control">
+  </div>
+</div>
+
+<div class="col-12 mt-4">
+  <h6>จำนวนวันเข้าพัก</h6>
+  <p id="totalDays" class="custom-result-text">-</p>
+</div>
+<!---คำนวณจำนวนวันเข้าพัก--------------->
+<script>
+function calculateDays() {
+  const checkIn  = document.getElementById('checkInDate').value;
+  const checkOut = document.getElementById('checkOutDate').value;
+  const result   = document.getElementById('totalDays');
+
+  if (checkIn && checkOut) {
+    const startDate = new Date(checkIn);
+    const endDate = new Date(checkOut);
+
+    const timeDiff = endDate - startDate;
+    const dayDiff = timeDiff / (1000 * 60 * 60 * 24);
+
+    if (dayDiff >= 0) {
+      result.textContent = `${dayDiff + 1} วัน`;  // นับวันที่เข้าพักด้วย
+    } else {
+      result.textContent = "⚠️ วันที่ออกต้องไม่ก่อนวันที่เข้าพัก";
+    }
+  } else {
+    result.textContent = "-";
+  }
+}
+</script>
+<div class="col-md-12">
+  <label for="etcReason" class="form-label">การเบิกกรณีอื่นๆ</label>
+  <input type="text" class="form-control" id="etcReason" placeholder="ระบุรายละเอียด">
+</div>
+<!--- btn nextpage -->
+<div class="col-md-6">
+      <button class="btn btn-primary" onclick="formuser()">กลับ</button>
+      <button class="btn btn-warning" onclick="#">แสดงตัวอย่าง</button>
+      <button class="btn btn-success" onclick="#">ส่ง</button>
+      <script>
+          function formuser() {
+              window.location.href = "formuser.html"; // เปลี่ยนไปยังหน้าใหม่
+          }
+      </script> <!--- btn nextpage -->
+</div>
+</form>
+</div> <!--card body-->
+</div> <!--card shadow-->
+</div> <!--container-->
 </body>
 </html>
