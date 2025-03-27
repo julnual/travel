@@ -1,12 +1,17 @@
-/* กำหนดให้ทั้งเว็บใช้ฟอนต์ Prompt */
-body
-{
-   font-family: 'Prompt', 'Kanit', sans-serif;
-   background-color: #f4f7fa;
+/* ใช้ฟอนต์ Prompt และ Kanit ทั้งเว็บ */
+body {
+    font-family: 'Prompt', 'Kanit', sans-serif;
+    background-color: #f4f7fa;
 }
-/* ปุ่ม */
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* ปรับแต่งปุ่ม */
 .btn-primary {
-    background: linear-gradient(135deg, #007bff, #0056b3); /* สีน้ำเงินไล่เฉด */
+    background: linear-gradient(135deg, #007bff, #0056b3);
     border: none;
     color: #fff;
     padding: 12px 25px;
@@ -26,86 +31,88 @@ body
     transform: scale(0.97);
     box-shadow: none;
 }
-/* card header */
+
+/* ปรับแต่ง Card */
 .card-header {
-    background: linear-gradient(135deg,#218838,#28a745); /* สีเขียวไล่เฉด */
+    background: linear-gradient(135deg,#218838,#28a745);
     color: #fff;
     font-weight: bold;
     font-size: 1.2rem;
     text-align: center;
 }
+
+.card-box {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card-box:hover {
+    transform: translateY(-5px);
+}
+
 .custom-result-text {
     font-size: 1.1rem;
     color: red;
 }
+
 /* ปรับแต่งฟอร์ม */
 form .form-label {
     font-weight: 500;
 }
-/* หน้า index-Slide Bar */
+
+/* Sidebar */
 .sidebar {
-  width: 230px;
-  background: linear-gradient(135deg, #218838,#28a745);
-  color: #fff;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 30px 15px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    width: 230px;
+    background: linear-gradient(135deg, #495057, #6c757d);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 30px 15px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .sidebar h4 {
-  color: #fff;
-  font-weight: 600;
-  margin-bottom: 30px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
+
 .sidebar .nav-link {
-  color: #f1f1f1;
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: 0.3s;
+    color: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
 }
+
 .sidebar .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
 }
+
+/* Main Content */
 .main-content {
-  margin-left: 250px;
-  padding: 30px;
+    margin-left: 250px;
+    padding: 30px;
 }
-.card-box {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
-  transition: 0.3s;
-}
-.card-box:hover {
-  transform: translateY(-5px);
-}
-.card-value {
-  font-size: 28px;
-  font-weight: bold;
-}
-.card-label {
-  font-size: 14px;
-  color: #777;
-}
-.icon-box {
-  font-size: 32px;
-  color: #888;
-}
+
+/* Footer Styles */
 .card-footer {
-  border-top: 1px solid #eee;
-  padding-top: 10px;
-  font-size: 13px;
-  color: #fff;
-  border-radius: 0 0 15px 15px;
-  text-align: center;
-  margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    margin-top: 10px;
 }
+
 .footer-orange { background: linear-gradient(to right, #ff9a76, #ff7a59); }
 .footer-green { background: linear-gradient(to right, #1bd2a4, #07c09d); }
 .footer-red { background: linear-gradient(to right, #ff5f7e, #ff3c6f); }
